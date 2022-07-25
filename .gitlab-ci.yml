@@ -1,0 +1,11 @@
+---
+# DO NOT EDIT AND DO NOT DELETE
+include:
+  - local: .gitlab-ci/default.yml
+  - local: .gitlab-ci/prepare.yml
+  - local: .gitlab-ci/test.yml
+
+stages:
+  - prepare
+  - test
+  - integrationtest

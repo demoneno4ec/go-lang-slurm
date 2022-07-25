@@ -1,0 +1,27 @@
+containerName: container4test     # наименование docker контейнера при тестировании
+environment:                      # массив переменных окружения, передаваемых в docker контейнер
+  - DEBUG=1
+  - DB=${someapi:network_address}  # формат записи ${db:network_address} означае получение параметра из зависимого docker контейнера с именем db, параметр network_address
+
+dockerfile: "./Exercises/7.Docker/3/configs/dockerfile4test"      # имя dockerfile-a
+dependencies:                 # массив зависимостей в виде параметров для запуска docker контейнеров
+  - name: someapi             # наименование docker контейнера зависимости
+    environment:              # массив переменных окружения, передаваемых в docker контейнер зависимости
+      - DEBUG=1
+    image: registry.gitlab.com/art.frela/simplestapi:v1.0.0          # имя docker образа, для запуска зависимости
+tests:                        # массив тестов, которые необходимо выполнить над тестируемым приложением
+  - name: simple query        # наименование теста
+    expectedCode: 200         # http код ответа
+    queryType: GET            # тип http запроса: GET, POST, PUT, DELETE
+    url: /                    # url path к тестируемому приложению
+  - name: simple query 2
+    expectedCode: 200
+    responseContains: test
+    queryType: GET
+    url: /
+  - name: simple POST
+    expectedCode: 204
+    responseContains: html
+    queryType: POST
+    query: '{"data": 111}'
+    url: /v1/upload

@@ -1,0 +1,203 @@
+---
+hw:2.1:
+  stage: test
+  image: $GO_IMAGE
+  rules:
+    - changes:  # Include the job and set to when:manual if any of the follow paths match a modified file.
+        - Exercises/2.Basics/1/*.go
+  script:
+    - if [[ -n $(gofmt -l Exercises/2.Basics/1/) ]]; then echo "Необходимо отформатировать код при помощи gofmt" && exit 1; fi
+    - go test -v Exercises/2.Basics/1/*.go
+    - echo "Домашка 2.1 пройдена! Можно сдавать на ревью!"
+
+hw:2.2:
+  stage: test
+  image: $GO_IMAGE
+  rules:
+    - changes:  # Include the job and set to when:manual if any of the follow paths match a modified file.
+        - Exercises/2.Basics/2/*.go
+  script:
+    - if [[ -n $(gofmt -l Exercises/2.Basics/2/) ]]; then echo "Необходимо отформатировать код при помощи gofmt" && exit 1; fi
+    - go test -v Exercises/2.Basics/2/*.go
+    - echo "Домашка 2.2 пройдена! Можно сдавать на ревью!"
+
+hw:2.3:
+  stage: test
+  image: $GO_IMAGE
+  rules:
+    - changes:  # Include the job and set to when:manual if any of the follow paths match a modified file.
+        - Exercises/2.Basics/3/*.go
+  script:
+    - if [[ -n $(gofmt -l Exercises/2.Basics/1/) ]]; then echo "Необходимо отформатировать код при помощи gofmt" && exit 1; fi
+    - go test -v Exercises/2.Basics/3/*.go
+    - echo "Домашка 2.3 пройдена! Можно сдавать на ревью!"
+
+hw:3.1:
+  stage: test
+  image: $GO_IMAGE
+  rules:
+    - changes:  # Include the job and set to when:manual if any of the follow paths match a modified file.
+        - Exercises/3.Advanced/1/*.go
+  script:
+    - if [[ -n $(gofmt -l Exercises/3.Advanced/1/) ]]; then echo "Необходимо отформатировать код при помощи gofmt" && exit 1; fi
+    - go test -v Exercises/3.Advanced/1/*.go
+    - echo "Домашка 3.1 пройдена! Можно сдавать на ревью!"
+
+hw:3.2:
+  stage: test
+  image: $GO_IMAGE
+  rules:
+    - changes:  # Include the job and set to when:manual if any of the follow paths match a modified file.
+        - Exercises/3.Advanced/2/*.go
+  script:
+    - if [[ -n $(gofmt -l Exercises/3.Advanced/2/) ]]; then echo "Необходимо отформатировать код при помощи gofmt" && exit 1; fi
+    - go test -v Exercises/3.Advanced/2/*.go
+    - echo "Домашка 3.2 пройдена! Можно сдавать на ревью!"
+
+hw:4.1:
+  stage: test
+  image: $GO_IMAGE
+  rules:
+    - changes:  # Include the job and set to when:manual if any of the follow paths match a modified file.
+        - Exercises/4.Concurrency/1/*.go
+  script:
+    - if [[ -n $(gofmt -l Exercises/4.Concurrency/1/) ]]; then echo "Необходимо отформатировать код при помощи gofmt" && exit 1; fi
+    - go test -v Exercises/4.Concurrency/1/*.go
+    - echo "Домашка 4.1 пройдена! Можно сдавать на ревью!"
+
+hw:4.2:
+  stage: test
+  image: $GO_IMAGE
+  rules:
+    - changes:  # Include the job and set to when:manual if any of the follow paths match a modified file.
+        - Exercises/4.Concurrency/2/*.go
+  script:
+    - if [[ -n $(gofmt -l Exercises/4.Concurrency/2/) ]]; then echo "Необходимо отформатировать код при помощи gofmt" && exit 1; fi
+    - go test -v Exercises/4.Concurrency/2/*.go
+    - echo "Домашка 4.2 пройдена! Можно сдавать на ревью!"
+
+hw:4.3:
+  stage: test
+  image: $GO_IMAGE
+  rules:
+    - changes:  # Include the job and set to when:manual if any of the follow paths match a modified file.
+        - Exercises/4.Concurrency/3/*.go
+  script:
+    - if [[ -n $(gofmt -l Exercises/4.Concurrency/3/) ]]; then echo "Необходимо отформатировать код при помощи gofmt" && exit 1; fi
+    - go test -v Exercises/4.Concurrency/3/*.go
+    - echo "Домашка 4.3 пройдена! Можно сдавать на ревью!"
+
+hw:4.4:
+  stage: test
+  image: $GO_IMAGE
+  rules:
+    - changes:  # Include the job and set to when:manual if any of the follow paths match a modified file.
+        - Exercises/4.Concurrency/4/*.go
+  script:
+    - if [[ -n $(gofmt -l Exercises/4.Concurrency/4/) ]]; then echo "Необходимо отформатировать код при помощи gofmt" && exit 1; fi
+    - go test -v Exercises/4.Concurrency/4/*.go
+    - echo "Домашка 4.4 пройдена! Можно сдавать на ревью!"
+
+hw:6.1:
+  stage: test
+  image: $GO_IMAGE
+  rules:
+    - changes:  # Include the job and set to when:manual if any of the follow paths match a modified file.
+        - Exercises/5-6.Go_in_practice/1/*.go
+  script:
+    - if [[ -n $(gofmt -l Exercises/5-6.Go_in_practice/1/) ]]; then echo "Необходимо отформатировать код при помощи gofmt" && exit 1; fi
+    - go test -v Exercises/5-6.Go_in_practice/1/*.go
+    - echo "Домашка 6.1 пройдена! Можно сдавать на ревью!"
+
+hw:6.2:
+  stage: test
+  image: $GO_IMAGE
+  rules:
+    - changes:  # Include the job and set to when:manual if any of the follow paths match a modified file.
+        - Exercises/5-6.Go_in_practice/2/*.go
+  script:
+    - if [[ -n $(gofmt -l Exercises/5-6.Go_in_practice/2/) ]]; then echo "Необходимо отформатировать код при помощи gofmt" && exit 1; fi
+    - go test -v Exercises/5-6.Go_in_practice/2/*.go
+    - echo "Домашка 6.2 пройдена! Можно сдавать на ревью!"
+
+hw:7.1:
+  stage: test
+  services:
+    - redis:7-alpine
+    - nginx:1-alpine
+  image: $GO_IMAGE
+  rules:
+    - changes:  # Include the job and set to when:manual if any of the follow paths match a modified file.
+        - Exercises/7.Docker/1/*.go
+        - Exercises/7.Docker/1/*/*.go
+        - Exercises/7.Docker/1/*/*/*.go
+  script:
+    - if [[ -n $(gofmt -l Exercises/7.Docker/1/) ]]; then echo "Необходимо отформатировать код при помощи gofmt" && exit 1; fi
+    - go test -v --tags=integration  Exercises/7.Docker/1/internal/docker/*.go
+    - echo "Домашка 7.1 пройдена! Можно сдавать на ревью!"
+
+hw:7.2:
+  stage: test
+  image: hadolint/hadolint:latest-debian
+  rules:
+    - changes:  # Include the job and set to when:manual if any of the follow paths match a modified file.
+        - Service/build/checker/Dockerfile
+  script:
+    - hadolint Service/build/checker/Dockerfile
+    - echo "Домашка 7.2 пройдена! Можно сдавать на ревью!"
+
+hw:7.3-build:
+  stage: test
+  image: $GO_IMAGE
+  rules:
+    - changes:  # Include the job and set to when:manual if any of the follow paths match a modified file.
+        - Exercises/7.Docker/3/*.go
+        - Exercises/7.Docker/3/*/*.go
+        - Exercises/7.Docker/3/*/*/*.go
+  script:
+    - echo build app
+    - go build -o testbox Exercises/7.Docker/3/cmd/testbox/main.go
+    - mkdir bin
+    - cp testbox bin/testbox
+  artifacts:
+    paths:
+      - bin
+
+hw:7.3-test:
+  stage: integrationtest
+  rules:
+    - changes:  # Include the job and set to when:manual if any of the follow paths match a modified file.
+        - Exercises/7.Docker/3/*.go
+        - Exercises/7.Docker/3/*/*.go
+        - Exercises/7.Docker/3/*/*/*.go
+  script:
+    - cp bin/testbox testbox
+    - ./testbox -f Exercises/7.Docker/3/configs/config4test.yaml
+    - cat report.txt
+    - echo "Домашка 7.3 пройдена! Можно сдавать на ревью!"
+
+hw:8.2:
+  stage: test
+  image: hadolint/hadolint:latest-debian
+  rules:
+    - changes:  # Include the job and set to when:manual if any of the follow paths match a modified file.
+        - Service/build/checker/Dockerfile
+        - Service/build/gometr/Dockerfile
+        - Service/build/restapi/Dockerfile
+  script:
+    - hadolint Service/build/checker/Dockerfile
+    - hadolint Service/build/gometr/Dockerfile
+    - hadolint Service/build/restapi/Dockerfile
+    - echo "Домашка 8.2 пройдена! Можно сдавать на ревью!"
+
+hw:8.3:
+  stage: test
+  image:
+    name: zegl/kube-score:latest-kustomize
+  rules:
+    - changes:  # Include the job and set to when:manual if any of the follow paths match a modified file.
+        - Service/deployments/manifests/*.y*ml
+  script:
+    - kube-score version
+    - kube-score score Service/deployments/manifests/*.y*ml
+    - echo "Домашка 8.3 пройдена! Можно сдавать на ревью!"

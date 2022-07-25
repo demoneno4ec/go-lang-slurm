@@ -1,0 +1,8 @@
+---
+default:
+  tags:
+    - docker-executor
+
+variables:
+  GO_IMAGE: golang:1.18-buster
+...
