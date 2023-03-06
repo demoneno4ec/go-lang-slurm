@@ -1,10 +1,26 @@
 package main
 
+import "fmt"
+
 func main() {
-	// Тут демонстрация работы функции
+	fmt.Println(isSorted(nil))
 }
 
-func isSorted(ww []string) bool {
-	// TODO: код писать здесь
+func isSorted(strings []string) bool {
+	lenStrings := len(strings)
+	if strings == nil {
+		return false
+	}
+
+	for index, value := range strings {
+		index++
+		for index < lenStrings {
+			if strings[index] < value {
+				return false
+			}
+			index++
+		}
+	}
+
 	return true
 }

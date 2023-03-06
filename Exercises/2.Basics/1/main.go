@@ -8,6 +8,16 @@ func main() {
 }
 
 func doubleDetector(nums []int) bool {
-	// TODO: код писать здесь
+	lenNums := len(nums)
+	for index, value := range nums {
+		index++
+		for index < lenNums {
+			if nums[index] == value {
+				return true
+			}
+			index++
+		}
+	}
+
 	return false
 }

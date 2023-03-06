@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/../gometr/.idea/gometr.iml" filepath="$PROJECT_DIR$/../gometr/.idea/gometr.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/gotemplate.iml" filepath="$PROJECT_DIR$/.idea/gotemplate.iml" />
+    </modules>
+  </component>
+</project>
